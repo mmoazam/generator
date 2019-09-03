@@ -13,7 +13,10 @@ RUN dotnet restore tests/tests.csproj
 
 # copy src
 COPY . .
+
+
 # test if test pass we get image
+ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test tests/tests.csproj
 
 # publish
